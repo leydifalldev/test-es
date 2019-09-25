@@ -5,7 +5,11 @@ import axios from "axios";
 class PlaceService {
   async getList() {
     const playerdata = await this.getDataFromEndPoint();
-    return playerdata.data.players.sort((a, b)=> {
+    return this.sortData(playerdata);
+  }
+
+  sortData(data) {
+    return data.data.players.sort((a, b)=> {
       if (a.id !== b.id) {
         return a.id - b.id
     }
