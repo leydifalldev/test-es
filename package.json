@@ -8,7 +8,7 @@
     "build:ts": "tsc",
     "watch:ts": "tsc -w",
     "watch": "concurrently --kill-others \"tsc -w\" \"nodemon dist/server.js\"",
-    "start": "node dist/server.js",
+    "start": "node dist/api/server.js",
     "test": "mocha --require ts-node/register test/**/*.ts"
   },
   "author": "",

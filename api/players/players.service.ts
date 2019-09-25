@@ -8,8 +8,8 @@ class PlayerService {
     return this.sortData(playerdata);
   }
 
-  sortData(data) {
-    return data.data.players.sort((a, b)=> {
+  sortData(data: any) {
+    return data.data.players.sort((a: any, b: any)=> {
       if (a.id !== b.id) {
         return a.id - b.id
     }
@@ -20,9 +20,9 @@ class PlayerService {
     });
   }
 
-  async getPlayer(ref) {
+  async getPlayer(ref: number) {
     const playerdata = await this.getDataFromEndPoint();
-    let player = playerdata.data.players.find(player => player.id == ref);
+    let player = playerdata.data.players.find((player: any) => player.id == ref);
     let status = player ? 200 : 404;
     return {
       status: status,

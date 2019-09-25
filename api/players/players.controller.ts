@@ -13,7 +13,7 @@ export const GetPlayersListCtrl = async (req: Request, res: Response) => {
 export const GetPlayerCtrl = async (req: Request, res: Response) => {
   try {
     const { ref } = req.params;
-    let serviceResponse = await PlayerService.getPlayer(ref);
+    let serviceResponse = await PlayerService.getPlayer(+ref);
     res.status(serviceResponse.status).json(serviceResponse);
   } catch (e) {
     res.status(500).json(e);
