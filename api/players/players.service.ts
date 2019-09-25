@@ -2,7 +2,7 @@ import * as playerdata from "./players.data.json";
 import http from "http";
 import axios from "axios";
 
-class PlaceService {
+class PlayerService {
   async getList() {
     const playerdata = await this.getDataFromEndPoint();
     return this.sortData(playerdata);
@@ -31,7 +31,7 @@ class PlaceService {
   }
 
   async getDataFromEndPoint(){
-    try{
+    try {
       return await axios.get("https://eurosportdigital.github.io/eurosport-node-developer-recruitment/headtohead.json");
     } catch(e){
       console.log(e)
@@ -39,4 +39,4 @@ class PlaceService {
   }
 }
 
-export default new PlaceService();
+export default new PlayerService();
