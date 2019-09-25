@@ -12,8 +12,13 @@ class PlaceService {
     });
   }
 
-  getPlayer() {
-    return playerdata;
+  getPlayer(ref) {
+    let player = playerdata.players.find(player => player.id == ref);
+    let status = player ? 200 : 404;
+    return {
+      status: status,
+      data: player
+    }
   }
 }
 
